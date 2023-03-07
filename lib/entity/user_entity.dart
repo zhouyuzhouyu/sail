@@ -17,7 +17,7 @@ class UserEntity {
     required this.expiredAt,
     required this.balance,
     required this.commissionBalance,
-    required this.planId,
+    @required this.planId,
     @required this.discount,
     @required this.commissionRate,
     @required this.telegramId,
@@ -35,7 +35,7 @@ class UserEntity {
   final DateTime? expiredAt;
   final int balance;
   final int commissionBalance;
-  final int planId;
+  final dynamic planId;
   final dynamic discount;
   final dynamic commissionRate;
   final dynamic telegramId;
