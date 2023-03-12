@@ -16,7 +16,7 @@ class AppModel extends BaseModel {
 
   AppModel() {
     General general = General(
-        loglevel: 'info',
+        loglevel: 'trace',
         logoutput: '{{leafLogFile}}',
         dnsServer: ['223.5.5.5', '114.114.114.114'],
         tunFd: '{{tunFd}}',
@@ -96,7 +96,7 @@ class AppModel extends BaseModel {
           actors: actors,
           checkInterval: 600));
 
-      config.rules?.last.target = "UrlTest";
+      config.rules?.last.target = "香港直连1-trojan";
     }
 
     config.proxies = proxies;

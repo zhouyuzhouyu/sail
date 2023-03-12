@@ -19,7 +19,7 @@ class UserSubscribeEntity {
     required this.resetDay,
   });
 
-  final int planId;
+  final int? planId;
   final String token;
   final int expiredAt;
   final int u;
@@ -30,35 +30,37 @@ class UserSubscribeEntity {
   final String subscribeUrl;
   final int? resetDay;
 
-  factory UserSubscribeEntity.fromJson(String str) => UserSubscribeEntity.fromMap(json.decode(str));
+  factory UserSubscribeEntity.fromJson(String str) =>
+      UserSubscribeEntity.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory UserSubscribeEntity.fromMap(Map<String, dynamic> json) => UserSubscribeEntity(
-    planId: json["plan_id"],
-    token: json["token"],
-    expiredAt: json["expired_at"],
-    u: json["u"],
-    d: json["d"],
-    transferEnable: json["transfer_enable"],
-    email: json["email"],
-    plan: Plan.fromMap(json["plan"]),
-    subscribeUrl: json["subscribe_url"],
-    resetDay: json["reset_day"],
-  );
+  factory UserSubscribeEntity.fromMap(Map<String, dynamic> json) =>
+      UserSubscribeEntity(
+        planId: json["plan_id"],
+        token: json["token"],
+        expiredAt: json["expired_at"],
+        u: json["u"],
+        d: json["d"],
+        transferEnable: json["transfer_enable"],
+        email: json["email"],
+        plan: Plan.fromMap(json["plan"]),
+        subscribeUrl: json["subscribe_url"],
+        resetDay: json["reset_day"],
+      );
 
   Map<String, dynamic> toMap() => {
-    "plan_id": planId,
-    "token": token,
-    "expired_at": expiredAt,
-    "u": u,
-    "d": d,
-    "transfer_enable": transferEnable,
-    "email": email,
-    "plan": plan.toMap(),
-    "subscribe_url": subscribeUrl,
-    "reset_day": resetDay,
-  };
+        "plan_id": planId,
+        "token": token,
+        "expired_at": expiredAt,
+        "u": u,
+        "d": d,
+        "transfer_enable": transferEnable,
+        "email": email,
+        "plan": plan.toMap(),
+        "subscribe_url": subscribeUrl,
+        "reset_day": resetDay,
+      };
 }
 
 class Plan {
@@ -68,7 +70,7 @@ class Plan {
     required this.transferEnable,
     required this.name,
     required this.show,
-    required this.sort,
+    @required this.sort,
     required this.renew,
     required this.content,
     required this.monthPrice,
@@ -89,7 +91,7 @@ class Plan {
   final int transferEnable;
   final String name;
   final int show;
-  final int sort;
+  final dynamic sort;
   final int renew;
   final String? content;
   final int? monthPrice;
@@ -109,46 +111,46 @@ class Plan {
   String toJson() => json.encode(toMap());
 
   factory Plan.fromMap(Map<String, dynamic> json) => Plan(
-    id: json["id"],
-    groupId: json["group_id"],
-    transferEnable: json["transfer_enable"],
-    name: json["name"],
-    show: json["show"],
-    sort: json["sort"],
-    renew: json["renew"],
-    content: json["content"],
-    monthPrice: json["month_price"],
-    quarterPrice: json["quarter_price"],
-    halfYearPrice: json["half_year_price"],
-    yearPrice: json["year_price"],
-    twoYearPrice: json["two_year_price"],
-    threeYearPrice: json["three_year_price"],
-    onetimePrice: json["onetime_price"],
-    resetPrice: json["reset_price"],
-    resetTrafficMethod: json["reset_traffic_method"],
-    createdAt: json["created_at"],
-    updatedAt: json["updated_at"],
-  );
+        id: json["id"],
+        groupId: json["group_id"],
+        transferEnable: json["transfer_enable"],
+        name: json["name"],
+        show: json["show"],
+        sort: json["sort"],
+        renew: json["renew"],
+        content: json["content"],
+        monthPrice: json["month_price"],
+        quarterPrice: json["quarter_price"],
+        halfYearPrice: json["half_year_price"],
+        yearPrice: json["year_price"],
+        twoYearPrice: json["two_year_price"],
+        threeYearPrice: json["three_year_price"],
+        onetimePrice: json["onetime_price"],
+        resetPrice: json["reset_price"],
+        resetTrafficMethod: json["reset_traffic_method"],
+        createdAt: json["created_at"],
+        updatedAt: json["updated_at"],
+      );
 
   Map<String, dynamic> toMap() => {
-    "id": id,
-    "group_id": groupId,
-    "transfer_enable": transferEnable,
-    "name": name,
-    "show": show,
-    "sort": sort,
-    "renew": renew,
-    "content": content,
-    "month_price": monthPrice,
-    "quarter_price": quarterPrice,
-    "half_year_price": halfYearPrice,
-    "year_price": yearPrice,
-    "two_year_price": twoYearPrice,
-    "three_year_price": threeYearPrice,
-    "onetime_price": onetimePrice,
-    "reset_price": resetPrice,
-    "reset_traffic_method": resetTrafficMethod,
-    "created_at": createdAt,
-    "updated_at": updatedAt,
-  };
+        "id": id,
+        "group_id": groupId,
+        "transfer_enable": transferEnable,
+        "name": name,
+        "show": show,
+        "sort": sort,
+        "renew": renew,
+        "content": content,
+        "month_price": monthPrice,
+        "quarter_price": quarterPrice,
+        "half_year_price": halfYearPrice,
+        "year_price": yearPrice,
+        "two_year_price": twoYearPrice,
+        "three_year_price": threeYearPrice,
+        "onetime_price": onetimePrice,
+        "reset_price": resetPrice,
+        "reset_traffic_method": resetTrafficMethod,
+        "created_at": createdAt,
+        "updated_at": updatedAt,
+      };
 }

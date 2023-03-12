@@ -4,7 +4,7 @@ import 'package:sail/utils/common_util.dart';
 class VpnManager {
   Future<bool> getStatus() async {
     // Native channel
-    const platform = MethodChannel("com.sail_tunnel.sail/vpn_manager");
+    const platform = MethodChannel("com.app.ZProxy/vpn_manager");
     bool result;
     try {
       result = await platform.invokeMethod("getStatus");
@@ -18,7 +18,7 @@ class VpnManager {
 
   Future<bool> toggle() async {
     // Native channel
-    const platform = MethodChannel("com.sail_tunnel.sail/vpn_manager");
+    const platform = MethodChannel("com.app.ZProxy/vpn_manager");
     bool result = false;
     try {
       result = await platform.invokeMethod("toggle");
@@ -32,7 +32,7 @@ class VpnManager {
 
   Future<String> getTunnelLog() async {
     // Native channel
-    const platform = MethodChannel("com.sail_tunnel.sail/vpn_manager");
+    const platform = MethodChannel("com.app.ZProxy/vpn_manager");
     String result;
     try {
       result = await platform.invokeMethod("getTunnelLog");
@@ -46,7 +46,7 @@ class VpnManager {
 
   Future<String> getTunnelConfiguration() async {
     // Native channel
-    const platform = MethodChannel("com.sail_tunnel.sail/vpn_manager");
+    const platform = MethodChannel("com.app.ZProxy/vpn_manager");
     String result;
     try {
       result = await platform.invokeMethod("getTunnelConfiguration");
@@ -60,7 +60,7 @@ class VpnManager {
 
   Future<String> setTunnelConfiguration(String conf) async {
     // Native channel
-    const platform = MethodChannel("com.sail_tunnel.sail/vpn_manager");
+    const platform = MethodChannel("com.app.ZProxy/vpn_manager");
     String result;
     try {
       result = await platform.invokeMethod("setTunnelConfiguration", conf);

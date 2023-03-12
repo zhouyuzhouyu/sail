@@ -22,14 +22,17 @@ class HttpUtil {
       receiveTimeout: 10000,
     );
     dio = Dio(options);
-    dio.interceptors.add(InterceptorsWrapper(onRequest: (options, handler) async {
+    dio.interceptors
+        .add(InterceptorsWrapper(onRequest: (options, handler) async {
       print("========================请求数据===================");
       print("url=${options.uri.toString()}");
       print("headers=${options.headers}");
       print("params=${options.data}");
 
       //如果token存在在请求参数加上token
-      await SharedPreferencesUtil.getInstance()?.getString(AppStrings.token).then((token) {
+      await SharedPreferencesUtil.getInstance()
+          ?.getString(AppStrings.token)
+          .then((token) {
         if (token != null) {
           options.queryParameters[AppStrings.token] = token;
           print("token=$token");
@@ -37,7 +40,9 @@ class HttpUtil {
       });
 
       //如果auth_data存在在请求参数加上auth_data
-      await SharedPreferencesUtil.getInstance()?.getString(AppStrings.authData).then((authData) {
+      await SharedPreferencesUtil.getInstance()
+          ?.getString(AppStrings.authData)
+          .then((authData) {
         if (authData != null) {
           options.queryParameters[AppStrings.authData] = authData;
           print("authData=$authData");
@@ -46,16 +51,19 @@ class HttpUtil {
 
       return handler.next(options);
     }, onResponse: (response, handler) {
-      print("========================请求数据===================");
+      print("========================返回数据===================");
       print("code=${response.statusCode}");
+      print("data=\n${response.data}\n");
 
       if (response.statusCode! < 200 || response.statusCode! >= 300) {
         if (response.statusCode == 403) {
           Application.navigatorKey.currentState?.pushNamed(Routers.login);
         }
 
-        return handler
-            .reject(DioError(requestOptions: response.requestOptions, response: response, type: DioErrorType.response));
+        return handler.reject(DioError(
+            requestOptions: response.requestOptions,
+            response: response,
+            type: DioErrorType.response));
       }
 
       return handler.next(response);
@@ -69,10 +77,12 @@ class HttpUtil {
   }
 
   //get请求
-  Future get(String url, {Map<String, dynamic>? parameters, Options? options}) async {
+  Future get(String url,
+      {Map<String, dynamic>? parameters, Options? options}) async {
     Response response;
     if (parameters != null && options != null) {
-      response = await dio.get(url, queryParameters: parameters, options: options);
+      response =
+          await dio.get(url, queryParameters: parameters, options: options);
     } else if (parameters != null && options == null) {
       response = await dio.get(url, queryParameters: parameters);
     } else if (parameters == null && options != null) {
@@ -84,7 +94,8 @@ class HttpUtil {
   }
 
   //post请求
-  Future post(String url, {Map<String, dynamic>? parameters, Options? options}) async {
+  Future post(String url,
+      {Map<String, dynamic>? parameters, Options? options}) async {
     Response response;
     if (parameters != null && options != null) {
       response = await dio.post(url, data: parameters, options: options);
@@ -99,7 +110,8 @@ class HttpUtil {
   }
 
   //put请求
-  Future put(String url, {Map<String, dynamic>? parameters, Options? options}) async {
+  Future put(String url,
+      {Map<String, dynamic>? parameters, Options? options}) async {
     Response response;
     if (parameters != null && options != null) {
       response = await dio.put(url, data: parameters, options: options);
@@ -114,7 +126,8 @@ class HttpUtil {
   }
 
   //delete请求
-  Future delete(String url, {Map<String, dynamic>? parameters, Options? options}) async {
+  Future delete(String url,
+      {Map<String, dynamic>? parameters, Options? options}) async {
     Response response;
     if (parameters != null && options != null) {
       response = await dio.delete(url, data: parameters, options: options);
