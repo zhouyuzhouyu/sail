@@ -174,12 +174,18 @@ public class LeafAdapater {
             var conf = file?.contents ?? ""
             
             conf = conf
-                .replacingOccurrences(of: "{{leafLogFile}}", with: fm.leafLogFile?.path ?? "")
+//                .replacingOccurrences(of: "{{leafLogFile}}", with: fm.leafLogFile?.path ?? "")
                 .replacingOccurrences(of: "{{tunFd}}", with: tunFd ?? "")
 
             try! conf.write(to: file!, atomically: true, encoding: .utf8)
 
             setenv("LOG_NO_COLOR", "true", 1)
+            // The CA is used by OpenSSl.
+            // You may download a CA from https://curl.se/docs/caextract.html
+            var certPath = Bundle.main.executableURL?.deletingLastPathComponent()
+            setenv("SSL_CERT_DIR", certPath?.path, 1)
+            certPath?.appendPathComponent("cacert.pem")
+            setenv("SSL_CERT_FILE", certPath?.path, 1)
 
             leaf_run(LeafAdapater.leafId, file?.path)
             

@@ -17,13 +17,15 @@ class AppModel extends BaseModel {
   AppModel() {
     General general = General(
         loglevel: 'trace',
-        logoutput: '{{leafLogFile}}',
+        // logoutput: '{{leafLogFile}}',
         dnsServer: ['223.5.5.5', '114.114.114.114'],
         tunFd: '{{tunFd}}',
-        routingDomainResolve: true);
+        routingDomainResolve: true,
+        dnsInterface: '192.168.20.1');
 
     List<Rule> rules = [];
-    // rules.add(Rule(typeField: 'EXTERNAL', target: 'Direct', filter: 'site:cn'));
+    rules.add(Rule(typeField: 'EXTERNAL', target: 'Direct', filter: 'site:cn'));
+    rules.add(Rule(typeField: 'EXTERNAL', target: 'Direct', filter: 'mmdb:cn'));
     rules.add(Rule(typeField: 'FINAL', target: 'Direct'));
 
     config.general = general;
@@ -77,10 +79,15 @@ class AppModel extends BaseModel {
     List<ProxyGroup> proxyGroups = [];
     List<String> actors = [];
 
+    proxies.add(Proxy(tag: "Direct", protocol: "direct"));
     serverModel.serverEntityList?.forEach((server) {
+      String protocol = server.type;
+      if (protocol == "v2ray") {
+        protocol = "vmess";
+      }
       Proxy proxy = Proxy(
           tag: server.name,
-          protocol: server.type,
+          protocol: protocol,
           address: server.host,
           port: server.port,
           encryptMethod: server.cipher,
@@ -96,7 +103,7 @@ class AppModel extends BaseModel {
           actors: actors,
           checkInterval: 600));
 
-      config.rules?.last.target = "香港直连1-trojan";
+      config.rules?.last.target = "UrlTest";
     }
 
     config.proxies = proxies;
