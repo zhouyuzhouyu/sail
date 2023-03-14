@@ -12,7 +12,7 @@ import os
     GeneratedPluginRegistrant.register(with: self)
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
-    let vpnManagerChannel = FlutterMethodChannel.init(name: "com.app.ZProxy/vpn_manager",
+    let vpnManagerChannel = FlutterMethodChannel.init(name: "com.yuzhou.XCat/vpn_manager",
                                                    binaryMessenger: controller.binaryMessenger);
     let manager = VPNManager.shared()
 

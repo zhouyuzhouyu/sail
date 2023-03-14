@@ -11,7 +11,6 @@
 		2FD21F1125A363E300F556E0 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F1025A363E300F556E0 /* PacketTunnelProvider.swift */; };
 		2FD21F1625A363E300F556E0 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2FD21F0D25A363E300F556E0 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2FD21F2425A364B700F556E0 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD21EF825A363AA00F556E0 /* NetworkExtension.framework */; };
-		31DA31B2DE002F172285FB1C /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9C0075B77637136AF52D8B /* Pods_Runner.framework */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		3E06F985293FACBB00E04D92 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD21F1025A363E300F556E0 /* PacketTunnelProvider.swift */; };
 		3E06F986293FAD1C00E04D92 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA6B288293FA83000B2BABC /* libleaf.a */; };
@@ -133,7 +132,6 @@
 				3E06F986293FAD1C00E04D92 /* libleaf.a in Frameworks */,
 				2FD21F2425A364B700F556E0 /* NetworkExtension.framework in Frameworks */,
 				DBC6F25A26C78B1D91884CE1 /* Pods_Runner.framework in Frameworks */,
-				31DA31B2DE002F172285FB1C /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +559,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = ZWK44WR3L3;
+				DEVELOPMENT_TEAM = S775APJC2C;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,7 +577,7 @@
 					"$(PROJECT_DIR)/LeafFFI",
 				);
 				MODULEMAP_FILE = "${PROJECT_DIR}/LeafFFI/module.modulemap";
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.ZProxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhou.XCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/LeafFFI";
@@ -603,7 +601,7 @@
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = ZWK44WR3L3;
+				DEVELOPMENT_TEAM = S775APJC2C;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -625,7 +623,7 @@
 				MARKETING_VERSION = 1.0.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.ZProxy.VPNExtention;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhou.XCat.VPNExtention;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -649,7 +647,7 @@
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = ZWK44WR3L3;
+				DEVELOPMENT_TEAM = S775APJC2C;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -670,7 +668,7 @@
 				);
 				MARKETING_VERSION = 1.0.2;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.ZProxy.VPNExtention;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhou.XCat.VPNExtention;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/LeafFFI";
@@ -692,7 +690,7 @@
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = ZWK44WR3L3;
+				DEVELOPMENT_TEAM = S775APJC2C;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -713,7 +711,7 @@
 				);
 				MARKETING_VERSION = 1.0.2;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.ZProxy.VPNExtention;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhou.XCat.VPNExtention;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/LeafFFI";
@@ -846,7 +844,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = ZWK44WR3L3;
+				DEVELOPMENT_TEAM = S775APJC2C;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -864,7 +862,7 @@
 					"$(PROJECT_DIR)/LeafFFI",
 				);
 				MODULEMAP_FILE = "${PROJECT_DIR}/LeafFFI/module.modulemap";
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.ZProxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhou.XCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/LeafFFI";
@@ -887,7 +885,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = ZWK44WR3L3;
+				DEVELOPMENT_TEAM = S775APJC2C;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -905,7 +903,7 @@
 					"$(PROJECT_DIR)/LeafFFI",
 				);
 				MODULEMAP_FILE = "${PROJECT_DIR}/LeafFFI/module.modulemap";
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.ZProxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhou.XCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/LeafFFI";

@@ -109,7 +109,7 @@ class SlidingCard extends StatelessWidget {
     double min = double.maxFinite;
 
     for (int i = 0; i < list.length; i++) {
-      if ((list[i] < min) && list[i] > 0) {
+      if ((list[i] < min) && list[i] >= 0) {
         min = list[i];
       }
     }

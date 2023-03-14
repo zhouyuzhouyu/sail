@@ -1,6 +1,6 @@
 import NetworkExtension
 
-//let appGroup = "group.com.app.ZProxy"
+//let appGroup = "group.com.yuzhou.XCat"
 
 // See https://github.com/eycorsican/leaf/blob/master/README.zh.md#conf for more conf examples.
 /*
