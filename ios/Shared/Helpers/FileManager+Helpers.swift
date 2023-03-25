@@ -8,7 +8,7 @@
 import Foundation
 
 extension FileManager {
-    static var appGroupId = "group.com.yuzhou.XCat"
+    static var appGroupId = "group.com.zoyu.XCat"
     
     private var sharedFolderURL: URL? {
         let appGroupId = FileManager.appGroupId
