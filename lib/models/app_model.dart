@@ -11,7 +11,7 @@ class AppModel extends BaseModel {
   VpnManager vpnManager = VpnManager();
   bool isOn = false;
   PageController pageController = PageController(initialPage: 0);
-  String appTitle = 'Sail';
+  String appTitle = 'XCat';
   Config config = Config();
 
   AppModel() {

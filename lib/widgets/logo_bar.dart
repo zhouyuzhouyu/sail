@@ -19,7 +19,8 @@ class LogoBar extends StatelessWidget {
   Widget build(BuildContext context) {
     AppModel appModel = Provider.of<AppModel>(context);
     UserModel userModel = Provider.of<UserModel>(context);
-    UserSubscribeModel userSubscribeModel = Provider.of<UserSubscribeModel>(context);
+    UserSubscribeModel userSubscribeModel =
+        Provider.of<UserSubscribeModel>(context);
 
     return Container(
       margin: EdgeInsets.only(top: ScreenUtil().setWidth(60)),
@@ -28,7 +29,7 @@ class LogoBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Sail",
+            "XCat",
             style: TextStyle(
               fontWeight: FontWeight.w900,
               fontSize: ScreenUtil().setSp(60),
@@ -38,58 +39,79 @@ class LogoBar extends StatelessWidget {
           Row(
             children: [
               Material(
-                color: isOn ? const Color(0x66000000) : AppColors.darkSurfaceColor,
+                color:
+                    isOn ? const Color(0x66000000) : AppColors.darkSurfaceColor,
                 borderRadius: BorderRadius.circular(ScreenUtil().setWidth(30)),
                 child: InkWell(
-                  borderRadius: BorderRadius.circular(ScreenUtil().setWidth(30)),
+                  borderRadius:
+                      BorderRadius.circular(ScreenUtil().setWidth(30)),
                   onTap: () => NavigatorUtil.goToCrisp(context),
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                        vertical: ScreenUtil().setWidth(10), horizontal: ScreenUtil().setWidth(30)),
+                        vertical: ScreenUtil().setWidth(10),
+                        horizontal: ScreenUtil().setWidth(30)),
                     child: Text(
                       "客服",
-                      style:
-                      TextStyle(fontSize: ScreenUtil().setSp(36), color: Colors.white, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                          fontSize: ScreenUtil().setSp(36),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(15))),
+              Padding(
+                  padding: EdgeInsets.only(left: ScreenUtil().setWidth(15))),
               Material(
-                color: isOn ? const Color(0x66000000) : AppColors.darkSurfaceColor,
+                color:
+                    isOn ? const Color(0x66000000) : AppColors.darkSurfaceColor,
                 borderRadius: BorderRadius.circular(ScreenUtil().setWidth(30)),
                 child: InkWell(
-                  borderRadius: BorderRadius.circular(ScreenUtil().setWidth(30)),
+                  borderRadius:
+                      BorderRadius.circular(ScreenUtil().setWidth(30)),
                   onTap: () => appModel.jumpToPage(3),
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                        vertical: ScreenUtil().setWidth(10), horizontal: ScreenUtil().setWidth(30)),
+                        vertical: ScreenUtil().setWidth(10),
+                        horizontal: ScreenUtil().setWidth(30)),
                     child: Text(
                       userSubscribeModel?.userSubscribeEntity?.email ?? "欢迎光临",
-                      style:
-                          TextStyle(fontSize: ScreenUtil().setSp(36), color: Colors.white, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                          fontSize: ScreenUtil().setSp(36),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
               ),
-              userModel.isLogin ? Padding(padding: EdgeInsets.only(left: ScreenUtil().setWidth(15))) : Container(),
+              userModel.isLogin
+                  ? Padding(
+                      padding: EdgeInsets.only(left: ScreenUtil().setWidth(15)))
+                  : Container(),
               userModel.isLogin
                   ? Material(
-                      color: isOn ? const Color(0x66000000) : AppColors.darkSurfaceColor,
-                      borderRadius: BorderRadius.circular(ScreenUtil().setWidth(30)),
+                      color: isOn
+                          ? const Color(0x66000000)
+                          : AppColors.darkSurfaceColor,
+                      borderRadius:
+                          BorderRadius.circular(ScreenUtil().setWidth(30)),
                       child: InkWell(
-                        borderRadius: BorderRadius.circular(ScreenUtil().setWidth(30)),
+                        borderRadius:
+                            BorderRadius.circular(ScreenUtil().setWidth(30)),
                         onTap: () {
                           userModel.logout();
                           NavigatorUtil.goLogin(context);
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              vertical: ScreenUtil().setWidth(10), horizontal: ScreenUtil().setWidth(30)),
+                              vertical: ScreenUtil().setWidth(10),
+                              horizontal: ScreenUtil().setWidth(30)),
                           child: Text(
                             '退出',
                             style: TextStyle(
-                                fontSize: ScreenUtil().setSp(36), color: Colors.white, fontWeight: FontWeight.w500),
+                                fontSize: ScreenUtil().setSp(36),
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),

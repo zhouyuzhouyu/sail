@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.2+2
+version: 1.0.2+4
 
 
 
@@ -53,10 +53,6 @@ dependencies:
   fluttertoast: ^8.0.9
   meta: ^1.7.0
   flutter_icmp_ping: ^3.1.0
-  jpush_flutter:
-    git:
-      url: https://github.com/jpush/jpush-flutter-plugin.git
-      ref: dev-2.x
 
 dev_dependencies:
   flutter_lints: ^2.0.1
